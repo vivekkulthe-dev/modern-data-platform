@@ -2,6 +2,9 @@ import os
 import sys
 import psycopg2
 import boto3
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
 from confluent_kafka.admin import AdminClient
 from google.cloud import bigquery
 from dotenv import load_dotenv
