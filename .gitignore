@@ -225,3 +225,6 @@ logs/
 # end dbt Cloud content
 dbt_internal_packages/
 config/gcp_key.json
+.env
+config/*.json
+config/*.pem

@@ -39,6 +39,7 @@ def test_aiven_kafka():
             'sasl.mechanism': 'SCRAM-SHA-256',
             'sasl.username': os.getenv("KAFKA_USER"),
             'sasl.password': os.getenv("KAFKA_PASSWORD"),
+            'ssl.ca.location': os.getenv("KAFKA_CA_LOCATION", "config/ca.pem")  # <-- THIS FIXED IT
         }
         admin = AdminClient(conf)
         metadata = admin.list_topics(timeout=10.0)
